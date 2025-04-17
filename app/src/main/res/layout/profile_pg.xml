@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProfileActivity">
+
+
+
+    <TextView
+        android:id="@+id/profilePageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Profile Page"
+        android:textColor="@color/light_pink"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="8dp"
+        android:text="Logout"
+        />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageCardContainer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/profilePageTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/girl"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageCardContainer"
+        android:layout_alignTop="@id/imageCardContainer"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/userAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_alignStart="@id/name"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userAddress"
+        android:layout_alignStart="@id/userAddress"
+        android:layout_marginTop="16dp"
+        android:text="Edit Profile" />
+
+    <LinearLayout
+        android:id="@+id/favouriteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/btnEditProfile"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="@color/light_pink">
+
+        <TextView
+            android:id="@+id/txtFvourites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Favourites"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/noRecipeAvailableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:elevation="8dp"
+        android:visibility="gone"
+        android:layout_below="@id/favouriteLayout">
+
+        <TextView
+            android:id="@+id/textViewMessageNoRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@id/noRecipeAvailableLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFavourite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:clipToPadding="false" />
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_pantry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"
+    app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

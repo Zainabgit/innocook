@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="get_started">Get Started</string>
+    <string name="your_recipe_revolution">--Your Recipe Revolution--</string>
+    <string name="see_it_cook_it_love_it">See it. Cook it. Love it.</string>
+    <string name="todo">TODO</string>
+    <string name="create_account">Create Account</string>
+    <string name="profileimg">TODO</string>
+    <string name="sign_in_">SIGN IN</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="img">TODO</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account1">Create Account</string>
+    <string name="last_name">Last Name</string>
+    <string name="create_account_btn">Create Account</string>
+    <string name="email_ca">Email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_img">TODO</string>
+    <string name="first_name">First Name</string>
+    <string name="enter_ingredient">Enter Ingredient</string>
+    <string name="what_meal_do_you_want_to_cook">What meal do you want to Cook?</string>
+    <string name="how_much_time_do_you_have">How much time do you have?</string>
+    <string name="pantry">Pantry</string>
+    <string name="ingredients">Add Ingredients</string>
+    <string name="excluded_ingredients">Excluded Ingredients:</string>
+    <string name="exclude_ingredients">Exclude Ingredients</string>
+    <string name="do_you_have_any_dietery_requirements">Do you have any Dietery Requirements?</string>
+    <string name="what_cuisine_do_you_prefer">What Cuisine do you Prefer?</string>
+    <string name="api_key">9a7b20afcff74c10876e156ba32f5b73</string>
+    <string-array name="spinnerType">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <!-- Add more items as needed -->
+    </string-array>
+</resources>

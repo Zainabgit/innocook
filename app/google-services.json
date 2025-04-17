@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "987583640915",
+    "firebase_url": "https://innocook-dceed-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "innocook-dceed",
+    "storage_bucket": "innocook-dceed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987583640915:android:08c14b34edf5d89af2dda6",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtXpqqbRW9fhnfmJVIrecZ7T4lapE4Mg8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

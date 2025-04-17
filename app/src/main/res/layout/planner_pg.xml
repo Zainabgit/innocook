@@ -1,0 +1,257 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp"
+    tools:context=".PlannerActivity">
+
+    <ImageView
+        android:id="@+id/home_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation_planner"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-128dp"
+        android:layout_marginEnd="-13dp"
+        android:layout_marginBottom="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_11" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nested_scroll_view">
+
+
+        <TextView
+            android:id="@+id/textViewPlanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Meal Planner"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_planner"
+        app:layout_constraintTop_toBottomOf="@id/linear_layout_header"
+        tools:layout_editor_absoluteX="-2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textealPlannerType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="What's your plan type"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="#E6E2E2"
+                android:orientation="horizontal">
+
+                <!-- Spinner for selecting the type of ingredient -->
+                <Spinner
+                    android:id="@+id/spinnerPlanType"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDiet"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:text="What is your Target Calories (kcal) ?"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:background="#E6E2E2"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextCalories"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_border"
+                    android:hint="Enter calories"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textViewPlannerDiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="26dp"
+                android:text="@string/do_you_have_any_dietery_requirements"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="#E6E2E2"
+                android:orientation="horizontal">
+
+                <!-- Spinner for selecting the type of ingredient -->
+                <Spinner
+                    android:id="@+id/spinnerProportionDiet"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDiet"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewExcludeIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="26dp"
+                android:text="@string/exclude_ingredients"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:background="#E6E2E2"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextExcludeIngredient"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_border"
+                    android:hint="Enter Ingredient"
+                    android:minHeight="48dp"
+                    android:padding="8dp" />
+
+                <Button
+                    android:id="@+id/excludeIngredient_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Add" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewExcludedIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Excluded Ingredients:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <GridLayout
+                android:id="@+id/excludeIngredient_container"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/light_pink"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="35dp"
+                android:paddingTop="5dp"
+                android:useDefaultMargins="true"
+                android:verticalSpacing="10dp">
+
+                <!-- Ingredient buttons will be dynamically added here -->
+
+            </GridLayout>
+
+
+            <Button
+                android:id="@+id/generateRecipesButton_planner"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="16dp"
+                android:text="Generate Your meal Plan" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_planner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

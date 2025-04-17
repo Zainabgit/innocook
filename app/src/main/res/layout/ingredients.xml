@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ingredientContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <!-- Left TextView -->
+    <TextView
+        android:id="@+id/ingredientName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textSize="16sp"/> <!-- Adjust padding as needed -->
+
+    <!-- Right TextView -->
+    <TextView
+        android:id="@+id/ingredientMeasurement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textSize="16sp" /> <!-- Adjust padding as needed -->
+
+</LinearLayout>

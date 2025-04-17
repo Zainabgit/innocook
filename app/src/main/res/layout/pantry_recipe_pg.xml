@@ -1,0 +1,244 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:padding="0dp"
+    tools:context=".PantryRecipesActivity">
+
+    <!-- ScrollView to allow scrolling if content exceeds the screen height -->
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Vertical LinearLayout to hold the content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- CardView to contain the recipe information -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="0dp"
+                android:id="@+id/cardview"
+                android:padding="30dp">
+
+                <!-- Nested LinearLayout to organize content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="25dp"
+                    android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:id="@+id/recipeHederLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!-- Recipe Title -->
+                    <TextView
+                        android:id="@+id/textViewRecipeTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/coral_pink"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <!-- Star ImageView -->
+                    <ImageView
+                        android:id="@+id/imageViewStar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_star_border"
+                        android:contentDescription="star"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/imageCardContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:id="@+id/imageViewRecipe"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/image_border" />
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Left TextView -->
+                        <TextView
+                            android:id="@+id/preparationTimeHeader"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:text="Preparation Time :"
+                            android:textColor="@color/coral_pink"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:visibility="gone"/>
+
+                        <!-- Right TextView -->
+                        <TextView
+                            android:id="@+id/preparationTimeValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Left TextView -->
+                        <TextView
+                            android:id="@+id/servingsHeader"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:text="Servings:"
+                            android:textColor="@color/coral_pink"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:visibility="gone"/>
+
+                        <!-- Right TextView -->
+                        <TextView
+                            android:id="@+id/servingsValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Left TextView -->
+                        <TextView
+                            android:id="@+id/ingredientList"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:text="Ingredients:"
+                            android:textColor="@color/coral_pink"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyler_ingredientList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Left TextView -->
+                        <TextView
+                            android:id="@+id/nutrientsList"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:text="Nutrients:"
+                            android:textColor="@color/coral_pink"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyler_nutrientsList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Left TextView -->
+                        <TextView
+                            android:id="@+id/instructions"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:text="Instructions:"
+                            android:textColor="@color/coral_pink"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/detailedInstruction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:gravity="start|end"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_pantry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
